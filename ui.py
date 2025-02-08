@@ -5,7 +5,7 @@ import requests
 API_URL = "http://127.0.0.1:5000/search"  
 
 # Streamlit UI
-st.title("BrainLox Course Search Chatbot 🔍")
+st.title("BrainLox Course Search Chatbot")
 
 st.write("Ask me anything about BrainLox courses, and I'll find the best matches for you!")
 
@@ -24,7 +24,7 @@ if st.button("Search"):
                 st.subheader("Top Matching Courses:")
                 for idx, result in enumerate(results, start=1):
                     st.write(f"**{idx}. {result['course']}**")
-                    st.write(f"📖 **Description:** {result['metadata'].get('description', 'No description available')}")
+                    st.write(f"**Description:** {result['metadata'].get('description', 'No description available')}")
                     st.write("---")  # Divider
             else:
                 st.warning("No matching courses found. Try a different query!")
